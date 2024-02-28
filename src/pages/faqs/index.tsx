@@ -29,12 +29,12 @@ const FaqsPage: NextPage<FaqPageProps> = ({faqs = []}) => {
 };
 
 // export const getStaticProps: GetStaticProps = async (ctx) => {
-// 	const faqs = await getFaqs();
+// 	const response = await fetch('http://localhost:3000/api/faqs')
+//   const faqs = await response.json()
 
 // 	return {
 // 		props: {
-// 			// faqs,
-// 			faqs: []
+// 			faqs,
 // 		},
 // 	};
 // };
