@@ -2,6 +2,7 @@ import {Layout} from "@/components/layouts";
 import { Faq } from "@/interface";
 import {getFaqs} from "@/services/getFaqs";
 import {GetStaticProps, NextPage} from "next";
+import { faqs } from "../../data/faqs";
 
 interface FaqPageProps {
   faqs: Faq[];
@@ -28,15 +29,14 @@ const FaqsPage: NextPage<FaqPageProps> = ({faqs = []}) => {
 	);
 };
 
-// export const getStaticProps: GetStaticProps = async (ctx) => {
-// 	const response = await fetch('http://localhost:3000/api/faqs')
-//   const faqs = await response.json()
+export const getStaticProps: GetStaticProps = async (ctx) => {
+	const faqs = await getFaqs();
 
-// 	return {
-// 		props: {
-// 			faqs,
-// 		},
-// 	};
-// };
+	return {
+		props: {
+			faqs,
+		},
+	};
+};
 
 export default FaqsPage;
