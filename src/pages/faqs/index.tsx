@@ -7,7 +7,7 @@ interface FaqPageProps {
   faqs: Faq[];
 }
 
-const FaqsPage: NextPage<FaqPageProps> = ({faqs}) => {
+const FaqsPage: NextPage<FaqPageProps> = ({faqs = []}) => {
 	return (
 		<Layout
 			title="Preguntas Frecuentes"
@@ -28,15 +28,15 @@ const FaqsPage: NextPage<FaqPageProps> = ({faqs}) => {
 	);
 };
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
-	const faqs = await getFaqs();
+// export const getStaticProps: GetStaticProps = async (ctx) => {
+// 	const faqs = await getFaqs();
 
-	return {
-		props: {
-			// faqs,
-			faqs: []
-		},
-	};
-};
+// 	return {
+// 		props: {
+// 			// faqs,
+// 			faqs: []
+// 		},
+// 	};
+// };
 
 export default FaqsPage;
